@@ -29,5 +29,3 @@ Phân công công việc:
 -	Nguyễn Mạnh Đức - B23DCKH028: Thiết kế các lớp trò chơi Poker
 -	Dương Gia Nguyên - B23DCDT179: Thiết kế đồ họa, UI.
 -	Lê Anh Đức - B23DCVT094: Thiết kế hệ thống file lưu kết quả, thông tin
--	
-
