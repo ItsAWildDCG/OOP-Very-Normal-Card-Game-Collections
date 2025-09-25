@@ -1,48 +1,31 @@
-import java.util.*;
-
 public class Card {
-    private String rank, suit;
-    private boolean face_up;
-    Card(){
-        this.rank = "Ace";
-        this.suit = "Spade";
-        this.face_up = true;
+    private String name, suit;
+    private boolean faceUp;
+    private int rank;
+    private static final String[] Rank_names = {
+        "", "Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+        "Nine", "Ten", "Jack", "Queen", "King"
+    };
+    public Card(int rank, String suit){
+        setRank(rank);
+        setSuit(suit);
     }
-    Card(String rank, String suit){
-        this.rank = rank;
-        this.suit = suit;
-        this.face_up = true;
+    
+    public int getRank(){return rank;}
+
+    public void setRank(int newRank){
+        this.rank = newRank;
+        updateName();
     }
-    String getRank(){
-        return this.rank;
+
+    public String getSuit(){return suit;}
+
+    public void setSuit(String newSuit){
+        this.suit = newSuit;
+        updateName();
     }
-    String getSuit(){
-        return this.suit;
-    }
-    void setRank(String rank){
-        this.rank = rank;
-    }
-    void setSuit(String suit){
-        this.suit = suit;
-    }
-    void flip(){
-        this.face_up = !face_up;
-    }
-    boolean checkFlip(){
-        return this.face_up;
-    }
-    String displayCard(){
-        StringBuilder output = new StringBuilder();
-        output.append("[");
-        if (face_up){
-            output.append(this.rank);
-            output.append(" of ");
-            output.append(this.suit);
-        }
-        else{
-            output.append("FACED DOWN");
-        }
-        output.append("]");
-        return output.toString();
-    }
+
+    public void updateName(){name = Rank_names[rank] + " of " + suit;}
+    
+    public string getName(){return name;}
 }
