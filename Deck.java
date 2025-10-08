@@ -9,11 +9,15 @@ public class Deck {
     public ArrayList<Card> check(){
         return cards;
     }
+    
     public void add_card(Card card){
         cards.add(card);
     }
 
     public void remove_card(Card card){
-        cards.remove(card);
+        if cards.contains(card){
+            cards.remove(card);
+        }
     }
 }
+
