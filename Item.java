@@ -8,10 +8,17 @@ public  class Item {
     public String getName(){
         return item_name;
     }
-    public void when_is_used(){
-        System.out.println("what item?");
+
+    public String getDescription(){
+        return description;
     }
+    
+    public void when_is_used(){
+        System.out.println("When"); // will be changed later depend on the item
+    }
+    
     public void use(){
-        System.out.println("what item?");
+        System.out.println("What item?"); //same
     }
 }
+
