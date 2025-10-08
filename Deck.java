@@ -15,10 +15,15 @@ public class Deck {
     }
 
     public Card peek(){
-        if (!Cards.isEmpty()){
+        if (!are_u_empty()){
             return Cards.get(0);
         }
         else return null;
+    }
+
+    @Override
+    protected boolean isEmpty(){
+        return Cards.isEmpty();
     }
     
     public void remove_card(Card card){
@@ -27,5 +32,6 @@ public class Deck {
         }
     }
 }
+
 
 
