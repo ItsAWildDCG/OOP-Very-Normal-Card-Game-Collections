@@ -23,3 +23,7 @@ Making extra suits with gimmicks like Reverse, Void (Temporarily disable enemy o
   - Void: unlocking by trying to draw from an empty deck 10 times in a row (drawX would be counted as 1)
     + Can be used as any rank or any suit (or every), but will cost you sth
     + NPC voice line after the 1st void card drawn: "Holy shit! Where did ya pull that from?"
+
+  - Reverse: unlocking by playing a hand with out-of-bounds cards only (different from 1-13 ranks and 4 default suits)
+    + Ranks and Suits are reversed (Flush would now be Five of a kind)
+    + NPC voice line after playing the first out-of-bond hand: "Ya sure ya are not cheating?"
