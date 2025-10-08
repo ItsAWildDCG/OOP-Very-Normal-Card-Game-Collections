@@ -14,10 +14,18 @@ public class Deck {
         cards.add(card);
     }
 
+    public Card peek(){
+        if (!Cards.isEmpty()){
+            return Cards.get(0);
+        }
+        else return null;
+    }
+    
     public void remove_card(Card card){
         if cards.contains(card){
             cards.remove(card);
         }
     }
 }
+
 
