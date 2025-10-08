@@ -3,7 +3,7 @@ import java.util.*;
 public class Person {
     private String CharName;
     private List<Card> hand = new ArrayList<>();
-    private Map<Integer, Integer> items = new TreeMap<>();
+    private Map<Integer, Integer> items = new LinkedHashMap<>();
     Person(){
         this.CharName = "Jimbo";
     }
@@ -47,4 +47,5 @@ public class Person {
         }
     }
 }
+
 
