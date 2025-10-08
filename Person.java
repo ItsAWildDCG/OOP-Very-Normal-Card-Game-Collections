@@ -30,14 +30,21 @@ public class Person {
         }
 
     }
+    
     void drawFrom(Deck i){
-        this.hand.add(i.peek());
-        i.removeCard(i.peek());
-    }
-    void drawFrom(Deck i, int count){
-        for (int n = 0; n< count; n++){
+        if(i.isEmpty()){
+            System.out.printl("Uh uh uh, ya can't draw from an empty deck ya know");
+        }
+        else{
             this.hand.add(i.peek());
             i.removeCard(i.peek());
         }
     }
+    
+    void drawXFrom(Deck i, int X){
+        for (int n = 0; n< X; n++){
+            drawFrom(i);
+        }
+    }
 }
+
