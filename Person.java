@@ -3,7 +3,7 @@ import java.util.*;
 public class Person {
     private String CharName;
     private List<Card> hand = new ArrayList<>();
-    private Map<Integer, Integer> items = new LinkedHashMap<>();
+    private Map<item, Integer> items = new LinkedHashMap<>();
     Person(){
         this.CharName = "Jimbo";
     }
@@ -46,6 +46,20 @@ public class Person {
             drawFrom(i);
         }
     }
+
+    void useItem(item z){
+        if(items.containsKey(z)){
+            z.use();
+            if(items.get(z) == 1){
+                items.remove(z);
+            else{
+                items.put(z, items.get(z) - 1);
+            }
+        }
+        else{
+            System.out.printl("What are you trying to do");
+        }
 }
+
 
 
