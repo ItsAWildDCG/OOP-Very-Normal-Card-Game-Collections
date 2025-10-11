@@ -1,3 +1,5 @@
+package Items;
+
 public  class Item {
     private String ID, item_name, description;
 
@@ -21,4 +23,5 @@ public  class Item {
         System.out.println("What item?"); //same
     }
 }
+
 
