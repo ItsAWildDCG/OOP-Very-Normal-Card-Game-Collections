@@ -2,6 +2,7 @@ package Person;
 
 import java.util.*;
 import Decks.Deck;
+import Items.*;
 
 public class Person {
     private String CharName;
@@ -61,6 +62,9 @@ public class Person {
         }
     }
 
+    void decreaseItem(item z){
+        
+
     void useItem(item z){
         if(items.containsKey(z)){
             z.use();
@@ -93,6 +97,7 @@ public class Person {
     }
     
 }
+
 
 
 
