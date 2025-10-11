@@ -1,3 +1,5 @@
+package Decks;
+
 public class Deck {
     private ArrayList<Card> cards;
     private String type;
@@ -32,6 +34,7 @@ public class Deck {
         }
     }
 }
+
 
 
 
