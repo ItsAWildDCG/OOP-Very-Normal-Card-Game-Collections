@@ -89,15 +89,16 @@ public class Person {
         init_card_draw -= a;
     }
     
-    void increaseChips(int a){
+    void healed(int a){
         currentChips += a;
     }
 
-    void decreaseChips(int a){
+    void takeDamage(int a){
         currentChips -= a;
     }
     
 }
+
 
 
 
