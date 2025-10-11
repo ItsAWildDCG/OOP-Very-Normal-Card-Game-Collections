@@ -75,6 +75,15 @@ public class Person {
         }
     }
 
+
+    void increaseCardDraw(int a){
+        init_card_draw += a;
+    }
+
+    void decreaseCardDraw(int a){
+        init_card_draw -= a;
+    }
+    
     void increaseChips(int a){
         currentChips += a;
     }
@@ -84,6 +93,7 @@ public class Person {
     }
     
 }
+
 
 
 
