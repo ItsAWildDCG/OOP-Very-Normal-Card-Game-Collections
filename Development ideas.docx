@@ -10,7 +10,29 @@
 
 
 
-
+*Items idea:
+(C): draw 1 card from the deck to your hand
+(C): draw 1 card from the deck to the shared pot
+(C): remove a card from the shared pot
+(C): increase the rank of 1 card in your hand
+(C): decrease the rank of 1 card in your hand
+(C): reveal a card from the dealer
+(C): deal 10 damage to the dealer
+(C): fold your hand, gain 25 def
+(C): regain 20% of your starting chips
+(C): regain the next 3 rounds' blinds
+(U): if your hand has no suit with more than 1 card, draw until there is a suit with 2 or more cards
+(U): draw a card from the deck to your hand, to the dealer and to the shared pot
+(U): double your atk, set your def to 0
+(U): swap your atk and def
+(U): gain $ equal to damage dealt this round
+(U): lose 10 chips, draw 3 cards
+(U): add a copy of a card in hand to the deck and draw 1 card from the deck to your hand
+(R): select a card, change all cards in hand's suit to the selected card's suit 
+(R): turn all face cards in play to kings
+(R): add a void card to your hand
+(R): remove a selected card from your hand, remove a random card from the dealer
+(R): add 2 "Two of Diamonds" cards to your hand
 
 
 
