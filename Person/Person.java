@@ -63,16 +63,17 @@ public class Person {
     }
 
     void decreaseItem(item z){
-        
+        if(items.get(z) == 1){
+            items.remove(z);
+        else{
+            items.put(z, items.get(z) - 1);
+        }
+    }
 
     void useItem(item z){
         if(items.containsKey(z)){
             z.use();
-            if(items.get(z) == 1){
-                items.remove(z);
-            else{
-                items.put(z, items.get(z) - 1);
-            }
+            decreaseItem(z);
         }
         else{
             System.out.printl("What are you trying to do");
@@ -97,6 +98,7 @@ public class Person {
     }
     
 }
+
 
 
 
