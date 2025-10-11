@@ -20,7 +20,12 @@ public  class Item {
     public void use(Person user, Person Target){
         System.out.println("What item?"); //same
     }
+
+    public void use(Person self){
+        use(self, self);
+    }
 }
+
 
 
 
