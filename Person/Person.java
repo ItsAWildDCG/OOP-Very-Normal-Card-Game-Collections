@@ -1,7 +1,7 @@
 package Person;
 
 import java.util.*;
-import Deck.*;
+import Decks.Deck;
 
 public class Person {
     private String CharName;
@@ -93,6 +93,7 @@ public class Person {
     }
     
 }
+
 
 
 
