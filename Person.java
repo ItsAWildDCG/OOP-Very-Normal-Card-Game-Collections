@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Person {
     private String CharName;
+    private int init_card_draw = 2;
     private List<Card> hand = new ArrayList<>();
     private Map<item, Integer> items = new LinkedHashMap<>();
     Person(){
@@ -47,6 +48,15 @@ public class Person {
         }
     }
 
+    void addItem(item z){
+        if(items.containsKey(z)){
+            items.put(z, items.get(z) + 1);
+        }
+        else{
+            items.put(z, 1);
+        }
+    }
+
     void useItem(item z){
         if(items.containsKey(z)){
             z.use();
@@ -61,6 +71,7 @@ public class Person {
         }
     }
 }
+
 
 
 
