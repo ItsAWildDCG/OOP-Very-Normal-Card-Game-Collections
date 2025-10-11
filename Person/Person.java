@@ -1,6 +1,7 @@
 package Person;
 
 import java.util.*;
+import java.math.*;
 import Decks.Deck;
 import Items.*;
 
@@ -90,7 +91,7 @@ public class Person {
     }
     
     void healed(int a){
-        currentChips += a;
+        currentChips += Math.min(a, baseChips - currentChips);
     }
 
     void takeDamage(int a){
@@ -98,6 +99,7 @@ public class Person {
     }
     
 }
+
 
 
 
