@@ -5,6 +5,7 @@ import java.util.*;
 public class Person {
     private String CharName;
     private int init_card_draw = 2;
+    private int chips;
     private List<Card> hand = new ArrayList<>();
     private Map<item, Integer> items = new LinkedHashMap<>();
     Person(){
@@ -73,6 +74,7 @@ public class Person {
         }
     }
 }
+
 
 
 
