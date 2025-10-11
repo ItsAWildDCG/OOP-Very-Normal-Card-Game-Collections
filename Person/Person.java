@@ -5,7 +5,7 @@ import java.util.*;
 public class Person {
     private String CharName;
     private int init_card_draw = 2;
-    private int chips;
+    private int baseChips, currentChips;
     private List<Card> hand = new ArrayList<>();
     private Map<item, Integer> items = new LinkedHashMap<>();
     Person(){
@@ -73,7 +73,17 @@ public class Person {
             System.out.printl("What are you trying to do");
         }
     }
+
+    void increaseChips(int a){
+        currentChips += a;
+    }
+
+    void decreaseChips(int a){
+        currentChips -= a;
+    }
+    
 }
+
 
 
 
