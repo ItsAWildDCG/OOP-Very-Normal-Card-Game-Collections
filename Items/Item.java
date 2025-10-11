@@ -15,13 +15,10 @@ public  class Item {
         return description;
     }
     
-    public void when_is_used(){
-        System.out.println("When"); // will be changed later depend on the item
-    }
-    
     public void use(){
         System.out.println("What item?"); //same
     }
 }
+
 
 
