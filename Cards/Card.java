@@ -1,3 +1,5 @@
+package Cards;
+
 public class Card {
     private String name, suit;
     private boolean faceUp;
@@ -29,3 +31,4 @@ public class Card {
     
     public string getName(){return name;}
 }
+
