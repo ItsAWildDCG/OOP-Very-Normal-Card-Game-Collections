@@ -1,4 +1,5 @@
 package Items;
+import Person.Person;
 
 public  class Item {
     private String item_name, description;
@@ -16,10 +17,11 @@ public  class Item {
         return description;
     }
     
-    public void use(){
+    public void use(Person person){
         System.out.println("What item?"); //same
     }
 }
+
 
 
 
