@@ -17,10 +17,11 @@ public  class Item {
         return description;
     }
     
-    public void use(Person person){
+    public void use(Person user, Person Target){
         System.out.println("What item?"); //same
     }
 }
+
 
 
 
