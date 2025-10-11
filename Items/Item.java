@@ -1,7 +1,8 @@
 package Items;
 
 public  class Item {
-    private String ID, item_name, description;
+    private String item_name, description;
+    private int ID;
 
     public Item(String item_name){
         this.item_name = item_name;
@@ -19,6 +20,7 @@ public  class Item {
         System.out.println("What item?"); //same
     }
 }
+
 
 
 
