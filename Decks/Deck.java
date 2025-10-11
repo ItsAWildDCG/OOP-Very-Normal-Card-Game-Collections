@@ -18,7 +18,7 @@ public class Deck {
 
     public Card peek(){
         if (!are_u_empty()){
-            return Cards.get(0);
+            return cards.get(0);
         }
         else return null;
     }
@@ -34,6 +34,7 @@ public class Deck {
         }
     }
 }
+
 
 
 
