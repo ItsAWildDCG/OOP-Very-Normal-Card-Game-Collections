@@ -82,9 +82,29 @@ public class Person {
         }
     }
 
-    void useItem(item z){
+    void useItemOnSelf(Item z){
         if(items.containsKey(z)){
             z.use(this);
+            decreaseItem(z);
+        }
+        else{
+            System.out.println("What are you trying to do");
+        }
+    }
+
+    void useItemOnDeck(Item z, Deck y){
+        if(items.containsKey(z)){
+            z.use(this, y);
+            decreaseItem(z);
+        }
+        else{
+            System.out.println("What are you trying to do");
+        }
+    }
+
+    void useItemOnTarget(Item z, Person target){
+        if(items.containsKey(z)){
+            z.use(this, target);
             decreaseItem(z);
         }
         else{
@@ -110,6 +130,7 @@ public class Person {
     }
     
 }
+
 
 
 
