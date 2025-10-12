@@ -10,7 +10,7 @@ public class Person {
     private int init_card_draw = 2;
     private int baseChips, currentChips;
     private List<Card> hand = new ArrayList<>();
-    private Map<item, Integer> items = new LinkedHashMap<>();
+    private Map<Item, Integer> items = new LinkedHashMap<>();
     Person(){
         this.CharName = "Jimbo";
     }
@@ -54,7 +54,7 @@ public class Person {
         }
     }
 
-    void addItem(item z){
+    void addItem(Item z){
         if(items.containsKey(z)){
             items.put(z, items.get(z) + 1);
         }
@@ -63,7 +63,7 @@ public class Person {
         }
     }
 
-    void decreaseItem(item z){
+    void decreaseItem(Item z){
         if(items.get(z) == 1){
             items.remove(z);
         else{
@@ -73,7 +73,7 @@ public class Person {
 
     void useItem(item z){
         if(items.containsKey(z)){
-            z.use();
+            z.use(this);
             decreaseItem(z);
         }
         else{
@@ -99,6 +99,7 @@ public class Person {
     }
     
 }
+
 
 
 
