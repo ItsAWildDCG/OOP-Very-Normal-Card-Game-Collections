@@ -110,6 +110,16 @@ public class Person {
         }
     }
 
+    void useItemOnCard(Item z, Card x){
+        if(items.containsKey(z)){
+            z.use(this, x);
+            decreaseItem(z);
+        }
+        else{
+            System.out.println("What are you trying to do");
+        }
+    } 
+    
     void useItemOnTarget(Item z, Person target){
         if(items.containsKey(z)){
             z.use(this, target);
@@ -138,6 +148,7 @@ public class Person {
     }
     
 }
+
 
 
 
