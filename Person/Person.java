@@ -64,6 +64,10 @@ public class Person {
         }
     }
 
+    void discard(Card c){
+        hand.remove(c);
+    }
+
     void addItem(Item z){
         if(items.containsKey(z)){
             items.put(z, items.get(z) + 1);
@@ -130,6 +134,7 @@ public class Person {
     }
     
 }
+
 
 
 
