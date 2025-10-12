@@ -5,7 +5,7 @@ import Person.Person;
 public class RegainChips extends Item {
     public RegainChips(String item_name){
         super(item_name);
-        this.ID = 1;
+        this.ID = 109;
         this.description = "A blessing from the Lord";
     }
 
@@ -14,4 +14,5 @@ public class RegainChips extends Item {
         self.healed(Math.round(self.getBaseChips / 5));
     }
 }   
+
 
