@@ -2,8 +2,8 @@ package Items;
 import Person.Person;
 
 public  class Item {
-    private String item_name, description;
-    private int ID;
+    protected String item_name, description;
+    protected int ID;
 
     public Item(String item_name){
         this.item_name = item_name;
@@ -25,6 +25,7 @@ public  class Item {
         use(self, self);
     }
 }
+
 
 
 
