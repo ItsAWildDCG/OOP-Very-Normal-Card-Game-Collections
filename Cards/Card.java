@@ -27,8 +27,17 @@ public class Card {
         updateName();
     }
 
+    public void increaseRank(){
+        this.rank += 1;
+    }
+
+    public void decreaseRank(){
+        this.rank -= 1;
+    }
+
     public void updateName(){name = Rank_names[rank] + " of " + suit;}
     
     public string getName(){return name;}
 }
+
 
