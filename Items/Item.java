@@ -2,7 +2,7 @@ package Items;
 import Person.Person;
 
 public  class Item {
-    protected String item_name, description;
+    protected String item_name, description, howToUse;
     protected int ID;
 
     public Item(String item_name){
@@ -25,6 +25,7 @@ public  class Item {
         use(self, self);
     }
 }
+
 
 
 
