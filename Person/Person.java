@@ -64,6 +64,10 @@ public class Person {
         }
     }
 
+    void discardTop(){
+        hand.remove(hand.size() - 1);
+    }
+    
     void discard(Card c){
         hand.remove(c);
     }
@@ -134,6 +138,7 @@ public class Person {
     }
     
 }
+
 
 
 
