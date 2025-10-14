@@ -11,15 +11,15 @@
 
 
 *Items idea:
-(C): draw 1 card from the deck to your hand
-(C): draw 1 card from the deck to the shared pot
-(C): remove a card from the shared pot
-(C): increase the rank of 1 card in your hand
-(C): decrease the rank of 1 card in your hand
+D(C): draw 1 card from the deck to your hand
+D(C): draw 1 card from the deck to the shared pot
+D(C): remove a card from the shared pot
+D(C): increase the rank of 1 card in your hand
+D(C): decrease the rank of 1 card in your hand
 (C): reveal a card from the dealer
 (C): deal 10 damage to the dealer
 (C): fold your hand, gain 25 def
-(C): regain 20% of your starting chips
+D(C): regain 20% of your starting chips
 (C): regain the next 3 rounds' blinds
 (U): if your hand has no suit with more than 1 card, draw until there is a suit with 2 or more cards
 (U): draw a card from the deck to your hand, to the dealer and to the shared pot
