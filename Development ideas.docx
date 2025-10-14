@@ -22,7 +22,7 @@ D(C): deal 10 damage to the dealer
 D(C): regain 20% of your starting chips
 (C): regain the next 3 rounds' blinds
 (U): if your hand has no suit with more than 1 card, draw until there is a suit with 2 or more cards
-(U): draw a card from the deck to your hand, to the dealer and to the shared pot
+D(U): draw a card from the deck to your hand, to the dealer and to the shared pot
 (U): double your atk, set your def to 0
 (U): swap your atk and def
 (U): gain $ equal to damage dealt this round
