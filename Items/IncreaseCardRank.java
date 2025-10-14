@@ -5,7 +5,7 @@ public class IncreaseCardRank extends Item {
     public IncreaseCardRank(String item_name){
         super(item_name);
         this.ID = 104;
-        this.description = "Increase the rank of 1 card in your hand";
+        this.howToUse = "Increase the rank of 1 card in your hand";
         this.description = "We ascend";
     }
 
@@ -14,3 +14,4 @@ public class IncreaseCardRank extends Item {
         x.increaseRank();
     }
 }
+
