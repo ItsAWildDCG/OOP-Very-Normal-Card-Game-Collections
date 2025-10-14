@@ -130,6 +130,16 @@ public class Person {
         }
     }
 
+    void useItemOnAll(Item z, Person dealer, Person pot){
+        if(items.containsKey(z)){
+            z.use(this, dealer, pot);
+            decreaseItem(z);
+        }
+        else{
+            System.out.println("What are you trying to do");
+        }
+    }
+
 
     void increaseCardDraw(int a){
         init_card_draw += a;
@@ -148,6 +158,7 @@ public class Person {
     }
     
 }
+
 
 
 
