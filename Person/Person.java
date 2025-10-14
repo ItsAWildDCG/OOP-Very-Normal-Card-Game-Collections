@@ -130,9 +130,9 @@ public class Person {
         }
     }
 
-    void useItemOnAll(Item z, Person dealer, Person pot){
+    void useItemOnAll(Item z, Person dealer, Person pot, Deck y){
         if(items.containsKey(z)){
-            z.use(this, dealer, pot);
+            z.use(this, dealer, pot, y);
             decreaseItem(z);
         }
         else{
@@ -158,6 +158,7 @@ public class Person {
     }
     
 }
+
 
 
 
