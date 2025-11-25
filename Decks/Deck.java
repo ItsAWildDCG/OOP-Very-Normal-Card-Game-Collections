@@ -11,7 +11,9 @@ public class Deck {
         for(String s : Card.Suit_names){
             for(int r : Card.Ranks){
                 if (r < 2) continue;
-                cards.add(new Card(r, s));
+                Random rdm = new Random();
+                if (rdm.nextInt(20) == 0) cards.add(new Card(r, s, true));
+                else cards.add(new Card(r, s));
             }
         }
     }
@@ -26,7 +28,7 @@ public class Deck {
 
     public Card peek(){
         if (!isEmpty()){
-            return cards.get(0);
+            return cards.getFirst();
         }
         else return null;
     }
@@ -36,9 +38,7 @@ public class Deck {
     }
 
     public void removeCard(Card card){
-        if (cards.contains(card)){
-            cards.remove(card);
-        }
+        cards.remove(card);
     }
 
     public void shuffle(){

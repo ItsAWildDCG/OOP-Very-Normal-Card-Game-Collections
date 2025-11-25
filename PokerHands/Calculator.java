@@ -38,12 +38,34 @@ public class Calculator {
         String rank = getString(counts, straight, flush);
 
         // Sort high cards for comparison
-        List<Integer> sorted = cards.stream()
-                .map(Card::getRank)
-                .sorted(Comparator.reverseOrder())
-                .collect(Collectors.toList());
+        List<Integer> sorted;
+        if(rank.equals("Flush")){
+            //if a flush, additional duplicates from wild cards do not count towards high card rankings
+            sorted = cards.stream()
+                    .map(Card::getRank)
+                    .sorted(Comparator.reverseOrder())
+                    .collect(Collectors.toList());
+        }
+        else{
+            List<Integer> sortedRanks = rankCounts.entrySet().stream()
+                    .sorted((a, b) -> {
+                        int cmpCount = Long.compare(b.getValue(), a.getValue());
+                        if (cmpCount != 0) return cmpCount;
+                        return Integer.compare(b.getKey(), a.getKey());
+                    })
+                    .map(Map.Entry::getKey)
+                    .toList();
 
+            sorted = new ArrayList<>();
 
+            // For each rank, add it count times
+            for (int rnk : sortedRanks) {
+                long count = rankCounts.get(rnk);
+                for (int i = 0; i < count; i++) {
+                    sorted.add(rnk);
+                }
+            }
+        }
         return new HandValue(rank, sorted);
     }
 

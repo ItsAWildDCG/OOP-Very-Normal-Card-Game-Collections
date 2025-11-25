@@ -2,7 +2,7 @@ package Cards;
 
 public class Card {
     private String name, suit;
-    private boolean faceUp, wild;
+    private boolean faceUp = true, wild;
     private int rank;
     public static final int[] Ranks = {
             0, 1 , 2, 3, 4, 5, 6, 7, 8, 9 , 10 , 11, 12 , 13 , 14
@@ -31,6 +31,14 @@ public class Card {
         updateName();
     }
 
+    public Card(int rank, String suit,boolean wild, boolean faceUp){
+        setRank(rank);
+        setSuit(suit);
+        setWild(wild);
+        setFaceUp(faceUp);
+        updateName();
+    }
+
     public int getRank(){return rank;}
 
     public void setRank(int newRank){
@@ -47,6 +55,14 @@ public class Card {
     public void setSuit(String newSuit){
         this.suit = newSuit;
         updateName();
+    }
+
+    public boolean getFaceUp() {
+        return faceUp;
+    }
+
+    public void setFaceUp(boolean a){
+        faceUp = a;
     }
 
     public boolean isWild() {

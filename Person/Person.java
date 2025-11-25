@@ -9,18 +9,27 @@ import Decks.Deck;
 import Items.*;
 
 public class Person {
-    private String CharName;
+    private String CharName, state;
     private int init_card_draw = 2;
     private double atkMult, defMult;
     private int baseChips, currentChips;
     private List<Card> hand = new ArrayList<>();
     private TypeTable table = new TypeTable();
+
     public Person(String charName, int baseChips) {
         this.CharName = charName;
         this.baseChips = baseChips;
         currentChips = baseChips;
         atkMult = 1;
         defMult = 1;
+    }
+
+    public Person(String charName, double atkMult, double defMult, int baseChips) {
+        CharName = charName;
+        this.atkMult = atkMult;
+        this.defMult = defMult;
+        this.baseChips = baseChips;
+        currentChips = baseChips;
     }
 
     public double getAtkMult() {
@@ -43,12 +52,8 @@ public class Person {
         return init_card_draw;
     }
 
-    public Person(String charName, double atkMult, double defMult, int baseChips) {
-        CharName = charName;
-        this.atkMult = atkMult;
-        this.defMult = defMult;
-        this.baseChips = baseChips;
-        currentChips = baseChips;
+    public String getState() {
+        return state;
     }
 
     public int getBaseChips() {
@@ -93,6 +98,24 @@ public class Person {
     public void changeChips(int a) {
         if (a>0) currentChips += Math.min(a, baseChips - currentChips);
         else currentChips = Math.max(currentChips+a, 0);
+    }
+
+    public boolean isPlayer(){
+        return false;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String toString(){
+        StringBuilder stats = new StringBuilder("{");
+        for (int i = 0; i<10; i++){
+            if (currentChips>=baseChips*i/10) stats.append("[]");
+            else stats.append("--");
+        }
+        stats.append(String.format("} %s %d/%d", CharName, currentChips, baseChips));
+        return stats.toString();
     }
 
 }
