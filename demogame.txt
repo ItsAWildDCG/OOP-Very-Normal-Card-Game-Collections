@@ -1,0 +1,239 @@
+Turn 1: 
+{[][][][][][][][][][]} DCG 200/200
+{[][][][][][][][][][]} Joe 160/160
+
+Community cards: [Nine of Clubs, Seven of Diamonds, Nine of Hearts, Four of Spades, Eight of Hearts]
+
+DCG's hand: [Two of Spades, Six of Spades]
+DCG's hand evaluated as: One Pair [9, 9, 8, 7, 6]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+3
+You have chosen to Fold!
+
+Joe's hand: [Jack of Spades, Five of Spades, Seven of Spades]
+Joe's hand evaluated as: Two Pair [9, 9, 7, 7, 11]
+
+Folded. Spent 5 chips to reduce damage this turn. (Remaining: 195/200)
+Joe attacks DCG! Two Pair (20DMG) → One Pair (9BLK)
+→ Damage dealt: 11
+DCG's remaining chips: 184/200
+-----------------------------------------------------------------------------------------------------
+Turn 2: 
+{[][][][][][][][][][]} DCG 184/200
+{[][][][][][][][][][]} Joe 160/160
+
+Community cards: [Six of Clubs, Queen of Hearts, Ten of Spades, Eight of Clubs, Wild Jack of Clubs]
+
+DCG's hand: [King of Spades, Nine of Diamonds]
+DCG's hand evaluated as: Straight [13, 12, 11, 10, 9]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+2
+You have chosen to Raise!
+
+Joe's hand: [Three of Spades, King of Clubs, Ten of Clubs]
+Joe's hand evaluated as: Flush [13, 11, 10, 8, 6]
+
+Raise failed... Lost 20 to the wager. (Remaining: 164/200)
+Joe attacks DCG! Flush (35DMG) → Straight (7BLK)
+→ Damage dealt: 28
+DCG's remaining chips: 136/200
+-----------------------------------------------------------------------------------------------------
+Turn 3: 
+{[][][][][][][]------} DCG 136/200
+{[][][][][][][][][][]} Joe 160/160
+
+Community cards: [Eight of Spades, Six of Spades, Two of Clubs, Jack of Clubs, Three of Spades]
+
+DCG's hand: [King of Hearts, Two of Hearts]
+DCG's hand evaluated as: One Pair [2, 2, 13, 11, 8]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+3
+You have chosen to Fold!
+
+Joe's hand: [Ten of Spades, Five of Spades, Seven of Diamonds]
+Joe's hand evaluated as: Flush [10, 8, 6, 5, 3]
+
+Folded. Spent 5 chips to reduce damage this turn. (Remaining: 131/200)
+Joe attacks DCG! Flush (35DMG) → One Pair (9BLK)
+→ Damage dealt: 26
+DCG's remaining chips: 105/200
+-----------------------------------------------------------------------------------------------------
+Turn 4: 
+{[][][][][][]--------} DCG 105/200
+{[][][][][][][][][][]} Joe 160/160
+
+Community cards: [Five of Hearts, Queen of Spades, Four of Diamonds, Four of Clubs, Three of Diamonds]
+
+DCG's hand: [Eight of Diamonds, Eight of Hearts]
+DCG's hand evaluated as: Two Pair [8, 8, 4, 4, 12]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+1
+You have chosen to Call!
+
+Joe's hand: [Six of Spades, Eight of Clubs, Jack of Diamonds]
+Joe's hand evaluated as: One Pair [4, 4, 12, 11, 8]
+
+DCG attacks Joe! Two Pair (24DMG) → One Pair (3BLK)
+→ Damage dealt: 21
+Joe's remaining chips: 139/160
+-----------------------------------------------------------------------------------------------------
+Turn 5: 
+{[][][][][][]--------} DCG 105/200
+{[][][][][][][][][]--} Joe 139/160
+
+Community cards: [Seven of Spades, Two of Spades, Six of Diamonds, Five of Clubs, Aces of Spades]
+
+DCG's hand: [Queen of Diamonds, Aces of Clubs]
+DCG's hand evaluated as: One Pair [14, 14, 12, 7, 6]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+1
+You have chosen to Call!
+
+Joe's hand: [Six of Clubs, Four of Spades, Two of Hearts]
+Joe's hand evaluated as: Two Pair [6, 6, 2, 2, 14]
+
+Joe attacks DCG! Two Pair (20DMG) → One Pair (3BLK)
+→ Damage dealt: 17
+DCG's remaining chips: 88/200
+-----------------------------------------------------------------------------------------------------
+Turn 6: Small blind. -5 chips every turn
+{[][][][][]----------} DCG 83/200
+{[][][][][][][][][]--} Joe 134/160
+
+Community cards: [Four of Diamonds, Ten of Clubs, Three of Diamonds, Nine of Hearts, Seven of Diamonds]
+
+DCG's hand: [King of Hearts, Five of Diamonds]
+DCG's hand evaluated as: High Cards [13, 10, 9, 7, 5]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+1
+You have chosen to Call!
+
+Joe's hand: [Five of Spades, Two of Spades, Queen of Hearts]
+Joe's hand evaluated as: High Cards [12, 10, 9, 7, 5]
+
+DCG attacks Joe! High Cards (6DMG) → High Cards (2BLK)
+→ Damage dealt: 4
+Joe's remaining chips: 130/160
+-----------------------------------------------------------------------------------------------------
+Turn 7: Small blind. -5 chips every turn
+{[][][][]------------} DCG 78/200
+{[][][][][][][][]----} Joe 125/160
+
+Community cards: [Three of Diamonds, Five of Diamonds, Aces of Clubs, Three of Hearts, Seven of Diamonds]
+
+DCG's hand: [Four of Spades, Six of Spades]
+DCG's hand evaluated as: Straight [7, 6, 5, 4, 3]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+2
+You have chosen to Raise!
+
+Joe's hand: [Ten of Clubs, Queen of Diamonds, Eight of Diamonds]
+Joe's hand evaluated as: Flush [12, 8, 7, 5, 3]
+
+Raise failed... Lost 20 to the wager. (Remaining: 58/200)
+Joe attacks DCG! Flush (35DMG) → Straight (7BLK)
+→ Damage dealt: 28
+DCG's remaining chips: 30/200
+-----------------------------------------------------------------------------------------------------
+Turn 8: Small blind. -5 chips every turn
+{[][]----------------} DCG 25/200
+{[][][][][][][][]----} Joe 120/160
+
+Community cards: [Aces of Clubs, Ten of Diamonds, Five of Spades, Aces of Diamonds, Aces of Hearts]
+
+DCG's hand: [Nine of Hearts, Queen of Spades]
+DCG's hand evaluated as: Three of a Kind [14, 14, 14, 12, 10]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+2
+You have chosen to Raise!
+
+Joe's hand: [Two of Spades, Nine of Spades, Seven of Spades]
+Joe's hand evaluated as: Three of a Kind [14, 14, 14, 10, 9]
+
+Raise successful! Damage dealt boosted
+DCG attacks Joe! Three of a Kind (54DMG) → Three of a Kind (5BLK)
+→ Damage dealt: 49
+Joe's remaining chips: 71/160
+-----------------------------------------------------------------------------------------------------
+Turn 9: Small blind. -5 chips every turn
+{[][]----------------} DCG 20/200
+{[][][][][]----------} Joe 66/160
+
+Community cards: [Six of Clubs, Queen of Hearts, Eight of Clubs, Three of Clubs, Nine of Diamonds]
+
+DCG's hand: [Wild King of Hearts, Wild King of Diamonds]
+DCG's hand evaluated as: Flush [13, 13, 8, 6, 3]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+2
+You have chosen to Raise!
+
+Joe's hand: [Queen of Diamonds, King of Spades, Four of Diamonds]
+Joe's hand evaluated as: One Pair [12, 12, 13, 9, 8]
+
+Raise successful! Damage dealt boosted
+DCG attacks Joe! Flush (63DMG) → One Pair (3BLK)
+→ Damage dealt: 60
+Joe's remaining chips: 6/160
+-----------------------------------------------------------------------------------------------------
+Turn 10: Small blind. -5 chips every turn
+{[]------------------} DCG 15/200
+{[]------------------} Joe 1/160
+
+Community cards: [Queen of Clubs, Nine of Spades, Six of Diamonds, Queen of Hearts, Three of Diamonds]
+
+DCG's hand: [Ten of Diamonds, Two of Diamonds]
+DCG's hand evaluated as: One Pair [12, 12, 10, 9, 6]
+
+What do you do?
+1: Call: Play out the round like normal.
+2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win
+3: Fold: Spend 5 chips to triple your DEF but you are forced to defend
+3
+You have chosen to Fold!
+
+Joe's hand: [Ten of Clubs, Six of Hearts, Jack of Hearts]
+Joe's hand evaluated as: Two Pair [12, 12, 6, 6, 11]
+
+Folded. Spent 5 chips to reduce damage this turn. (Remaining: 10/200)
+Joe attacks DCG! Two Pair (20DMG) → One Pair (9BLK)
+→ Damage dealt: 11
+DCG's remaining chips: 0/200
+-----------------------------------------------------------------------------------------------------
+DCG has ran out of chips! Joe wins with 1 chips remaining
+Damage per turn: 20.0
