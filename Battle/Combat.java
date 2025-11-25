@@ -33,7 +33,7 @@ public class Combat {
         if (attacker.isPlayer()){
             if (attacker.getState().equals("Raise")){
                 atkValue = (int)(atkValue*1.5);
-                System.out.println("Raise successful! Damage dealt boosted");
+                System.out.println("Raise successful! Damage dealt boosted.");
             }
         }
         else{
@@ -66,7 +66,7 @@ public class Combat {
                 defHand.getHandType(), defValue
         );
         System.out.printf("→ Damage dealt: %d%n", damage);
-        System.out.printf("%s's remaining chips: %d/%d%n-----------------------------------------------------------------------------------------------------%n",
+        System.out.printf("%s's remaining chips: %d/%d\n-----------------------------------------------------------------------------------------------------\n",
                 defender.getName(), defender.getCurrentChips(), defender.getBaseChips());
         try {
             Thread.sleep(1000);  // 1.5 seconds

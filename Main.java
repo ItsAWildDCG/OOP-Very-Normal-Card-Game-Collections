@@ -9,12 +9,12 @@ public class Main {
     public static void startOfTurn(int turncount, Person a, Person b){
         System.out.printf("Turn %d: ", turncount);
         if (turncount > 10) {
-            System.out.printf("Big blind. -%d chips every turn\n", turncount);
+            System.out.printf("Big blind. -%d chips every turn.\n", turncount);
             a.changeChips(-turncount);
             b.changeChips(-turncount);
         }
         else if (turncount > 5){
-            System.out.print("Small blind. -5 chips every turn\n");
+            System.out.print("Small blind. -5 chips every turn.\n");
             a.changeChips(-5);
             b.changeChips(-5);
         }
@@ -46,8 +46,8 @@ public class Main {
     public static void playerAction(Person a, Scanner inp){
         System.out.println("What do you do?\n" +
                 "1: Call: Play out the round like normal.\n" +
-                "2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win\n" +
-                "3: Fold: Spend 5 chips to triple your DEF but you are forced to defend");
+                "2: Raise: Wager 20 chips to boost your ATK by x1.5 if you win.\n" +
+                "3: Fold: Spend 5 chips to triple your DEF but you are forced to defend.");
         while (true){
             int action = inp.nextInt();
             if (action == 1) a.setState("Call");
@@ -75,8 +75,8 @@ public class Main {
     }
 
     public static void displayResults(Person a, Person b, int turn){
-        if (a.getCurrentChips() == 0) System.out.printf("%s has ran out of chips! %s wins with %d chips remaining%nDamage per turn: %.1f%n", a.getName(), b.getName(), b.getCurrentChips(), (double)a.getBaseChips()/turn);
-        else System.out.printf("%s has ran out of chips! %s wins with %d chips remaining%nDamage per turn: %.1f%n", b.getName(), a.getName(), a.getCurrentChips(), (double)b.getBaseChips()/turn);
+        if (a.getCurrentChips() == 0) System.out.printf("%s has ran out of chips! %s wins with %d chips remaining!%nDamage per turn: %.1f%n", a.getName(), b.getName(), b.getCurrentChips(), (double)a.getBaseChips()/turn);
+        else System.out.printf("%s has ran out of chips! %s wins with %d chips remaining!%nDamage per turn: %.1f%n", b.getName(), a.getName(), a.getCurrentChips(), (double)b.getBaseChips()/turn);
     }
 
     public static void main(String[] args){
