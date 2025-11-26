@@ -16,6 +16,11 @@ public class GameUI extends JFrame {
     private CardLayout cardLayout;
     private JPanel mainPanel;
 
+    public enum GameState {
+        NORMAL,
+        DISCARDING
+    }
+
     public GameUI() {
         setTitle("Very Normal Card Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -75,21 +80,12 @@ public class GameUI extends JFrame {
      * ========================
      */
     private JPanel createGamePanel() {
-        JPanel panel = new JPanel(new BorderLayout());
+        JPanel panel = new JPanel(null);
         panel.setBackground(GAME_BG);
 
         JLabel gameText = new JLabel("Game Screen Placeholder", SwingConstants.CENTER);
         gameText.setFont(new Font("Arial", Font.BOLD, 40));
         gameText.setForeground(Color.WHITE);
-
-        JTextArea info = new JTextArea(
-                "This is your game screen.\n\n" +
-                        "Replace this with the actual poker game UI.\n" +
-                        "Use the top-left button to return to menu.");
-        info.setEditable(false);
-        info.setBackground(GAME_BG);
-        info.setForeground(Color.WHITE);
-        info.setFont(new Font("Monospaced", Font.PLAIN, 18));
 
         JButton backButton = new JButton("← BACK TO MENU");
         backButton.setFont(new Font("Arial", Font.BOLD, 22));
@@ -100,18 +96,65 @@ public class GameUI extends JFrame {
         panel.add(backButton, BorderLayout.NORTH);
 
         // --- CARD AREA ---
-        JPanel cardPanel = new JPanel();
+        JPanel cardPanel = new JPanel(null);
         cardPanel.setOpaque(false); // optional, matches your background
-        cardPanel.setLayout(new FlowLayout(FlowLayout.LEFT, -20, 0)); // no gaps
+        cardPanel.setBounds(500, 500, 400, 200);
 
-        // Add some cards
-        cardPanel.add(new CardUI(new Card(1, "Diamonds", false, true)));
-        cardPanel.add(new CardUI(new Card(11, "Hearts", true, true)));
-        cardPanel.add(new CardUI(new Card(7, "Spades", true, true)));
+        CardUI card1 = new CardUI(new Card(1, "Diamonds", false, false));
+        card1.setBounds(0, 0, 100, 150); // x, y, width, height
+        cardPanel.add(card1);
 
+        CardUI card2 = new CardUI(new Card(11, "Hearts", true, false));
+        card2.setBounds(120, 0, 100, 150); // offset x for spacing
+        cardPanel.add(card2);
+
+        CardUI card3 = new CardUI(new Card(7, "Spades", true, false));
+        card3.setBounds(240, 0, 100, 150);
+        cardPanel.add(card3);
 
         panel.add(cardPanel, BorderLayout.CENTER);
+
+        // --- ACTION BUTTONS ---
+        JPanel actionPanel = new JPanel(null);
+        actionPanel.setOpaque(false);
+        actionPanel.setBounds(800, 100, 150, 300);
+
+        JButton callButton = createButton("Call", e -> handleCall());
+        callButton.setBounds(0, 0, 120, 40);
+        actionPanel.add(callButton);
+
+        JButton raiseButton = createButton("Raise", e -> handleRaise());
+        raiseButton.setBounds(0, 60, 120, 40);
+        actionPanel.add(raiseButton);
+
+
+        JButton foldButton = createButton("Fold", e -> handleFold());
+        foldButton.setBounds(0, 120, 120, 40);
+        actionPanel.add(foldButton);
+
+        actionPanel.add(callButton);
+        actionPanel.add(raiseButton);
+        actionPanel.add(foldButton);
+
+        panel.add(actionPanel, BorderLayout.EAST);
         return panel;
+    }
+
+
+    // --- ACTION METHODS ---
+    private void handleCall() {
+        System.out.println("Player chose to CALL");
+        // TODO: Implement your call logic
+    }
+
+    private void handleRaise() {
+        System.out.println("Player chose to RAISE");
+        // TODO: Implement your raise logic
+    }
+
+    private void handleFold() {
+        System.out.println("Player chose to FOLD");
+        // TODO: Implement your fold logic
     }
 
     /*
@@ -220,7 +263,6 @@ public class GameUI extends JFrame {
             }
         });
     }
-
 
     private void showScreen(String name) {
         cardLayout.show(mainPanel, name);
