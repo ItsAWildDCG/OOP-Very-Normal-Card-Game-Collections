@@ -30,7 +30,6 @@ public class HandValue implements Comparable<HandValue> {
             if (i == 0 && handType.equals("Straight")){
                 if (highCards.get(i) == 14 || o.highCards.get(i)== 14) return  o.highCards.get(i) - highCards.get(i);
             }
-            if (highCards.get(i) != 1 && o.highCards.get(i)== 1) return -1;
             int diff = highCards.get(i) - o.highCards.get(i);
             if (diff != 0) return diff;
         }

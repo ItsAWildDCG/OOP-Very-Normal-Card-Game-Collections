@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Deck {
     private ArrayList<Card> cards = new ArrayList<>();
-    private String type;
 
     public Deck(){
         for(String s : Card.Suit_names){
@@ -16,6 +15,10 @@ public class Deck {
                 else cards.add(new Card(r, s));
             }
         }
+    }
+
+    public Deck(boolean restart){
+        return;
     }
 
     public ArrayList<Card> check(){

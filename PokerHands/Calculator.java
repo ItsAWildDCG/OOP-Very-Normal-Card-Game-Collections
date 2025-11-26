@@ -40,7 +40,7 @@ public class Calculator {
         // Sort high cards for comparison
         List<Integer> sorted;
         if(rank.equals("Flush")){
-            //if a flush, additional duplicates from wild cards do not count towards high card rankings
+            //if flush, additional duplicates from wild cards do not count towards high card rankings
             sorted = cards.stream()
                     .map(Card::getRank)
                     .sorted(Comparator.reverseOrder())
@@ -73,7 +73,7 @@ public class Calculator {
         long max = counts.get(0);
 
         String rank;
-        if (max == 5) rank = "Five of a kind";
+        if (max == 5) rank = "Five of a Kind";
         else if (straight && flush) rank = "Straight Flush";
         else if (max == 4) rank =  "Four of a Kind";
         else if (counts.size() >= 2 && counts.get(0) == 3 && counts.get(1) >= 2) rank = "Full House";

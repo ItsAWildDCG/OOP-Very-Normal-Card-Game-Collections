@@ -1,5 +1,7 @@
 package Cards;
 
+import java.util.List;
+
 public class Card {
     private String name, suit;
     private boolean faceUp = true, wild;
@@ -9,7 +11,7 @@ public class Card {
     };
 
     public static final String[] Rank_names = {
-            "", "Aces", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
+            "", "", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
             "Nine", "Ten", "Jack", "Queen", "King", "Aces"
     };
 
@@ -36,6 +38,21 @@ public class Card {
         setSuit(suit);
         setWild(wild);
         setFaceUp(faceUp);
+        updateName();
+    }
+
+    public Card(String s){
+        String[] newcard = s.split("\\s+");
+        if (newcard[0].equals("Wild")){
+            setWild(true);
+            rank = List.of(Rank_names).indexOf(newcard[1]);
+            suit = newcard[3];
+        }
+        else{
+            setWild(false);
+            rank = List.of(Rank_names).indexOf(newcard[0]);
+            suit = newcard[2];
+        }
         updateName();
     }
 
@@ -73,7 +90,6 @@ public class Card {
         this.rank += r;
     }
 
-
     public void updateName(){
         if (wild) name = "Wild ";
         else name = "";
@@ -81,4 +97,6 @@ public class Card {
     }
 
     public String toString(){return name;}
+
+
 }

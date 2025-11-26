@@ -22,6 +22,7 @@ public class Person {
         currentChips = baseChips;
         atkMult = 1;
         defMult = 1;
+        state = "";
     }
 
     public Person(String charName, double atkMult, double defMult, int baseChips) {
@@ -30,6 +31,16 @@ public class Person {
         this.defMult = defMult;
         this.baseChips = baseChips;
         currentChips = baseChips;
+        state = "";
+    }
+
+    public Person(String charName, double atkMult, double defMult, int currentChips, int baseChips) {
+        CharName = charName;
+        this.atkMult = atkMult;
+        this.defMult = defMult;
+        this.baseChips = baseChips;
+        this.currentChips = currentChips;
+        state = "";
     }
 
     public double getAtkMult() {
@@ -83,8 +94,8 @@ public class Person {
         }
     }
 
-    public void discardTop() {
-        hand.removeLast();
+    public Card discardTop() {
+        return hand.removeLast();
     }
 
     public void discard(Card c) {
@@ -109,13 +120,21 @@ public class Person {
     }
 
     public String toString(){
-        StringBuilder stats = new StringBuilder("{");
+        StringBuilder stats = new StringBuilder("<");
         for (int i = 0; i<10; i++){
             if (currentChips>=baseChips*i/10) stats.append("[]");
             else stats.append("--");
         }
-        stats.append(String.format("} %s %d/%d", CharName, currentChips, baseChips));
+        stats.append(String.format("> %s %d/%d", CharName, currentChips, baseChips));
         return stats.toString();
+    }
+
+    public boolean hasNoCards(){
+        return hand.isEmpty();
+    }
+
+    public void uniqueAction(){
+        return;
     }
 
 }

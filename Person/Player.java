@@ -9,4 +9,6 @@ public class Player extends Person{
     public boolean isPlayer() {
         return true;
     }
+
+
 }
