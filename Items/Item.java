@@ -1,6 +1,8 @@
 package Items;
 
 import javax.swing.ImageIcon;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Item {
     public static String[] Item_Names = {
@@ -39,6 +41,72 @@ public class Item {
 
     public String toString(){
         return String.format("%s: %s", item_name, howToUse);
+    }
+
+    public static void itemGen(ArrayList<Item> items, String i){
+        String nextItem;
+        Random rdm = new Random();
+        if (i.equals("Random"))  nextItem = Item.Item_Names[rdm.nextInt(19)];
+        else nextItem = i;
+        switch(nextItem){
+            case "Broken Magnifier":
+                items.add(new BrokenMag());
+                break;
+            case "+1 Uno Card":
+                items.add(new CardDraw());
+                break;
+            case "One For @Everyone":
+                items.add(new Charity());
+                break;
+            case "No more middle":
+                items.add(new CommunityCardDeduct());
+                break;
+            case "Adoption Paper":
+                items.add(new CommunityCardDraw());
+                break;
+            case "Cursed Scroll":
+                items.add(new CursedScroll());
+                break;
+            case "Mr Krabz's Greed":
+                items.add(new Dia2());
+                break;
+            case "Doppleganger":
+                items.add(new Duplic());
+                break;
+            case "Kings of King":
+                items.add(new Kinged());
+                break;
+            case "Alu-card's Battlepass":
+                items.add(new Lifesteal());
+                break;
+            case "I lose this, you lose that":
+                items.add(new Loss());
+                break;
+            case "CSync":
+                items.add(new Melatonin());
+                break;
+            case "Demotion":
+                items.add(new RankDec());
+                break;
+            case "Strength":
+                items.add(new RankInc());
+                break;
+            case "Pile of cash":
+                items.add(new RegainChips());
+                break;
+            case "Madness Potion":
+                items.add(new Singed());
+                break;
+            case "Slate of *null*":
+                items.add(new Slate());
+                break;
+            case "Fairy's tooth":
+                items.add(new Toothfairy());
+                break;
+            case "Rainbow":
+                items.add(new UnoPickMoreCards());
+                break;
+        }
     }
 }
 

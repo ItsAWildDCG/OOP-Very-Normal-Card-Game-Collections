@@ -1,5 +1,8 @@
 package PokerHands;
 
+import Cards.Card;
+import Person.Person;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

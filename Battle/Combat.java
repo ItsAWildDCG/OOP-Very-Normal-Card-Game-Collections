@@ -79,4 +79,5 @@ public class Combat {
             Thread.currentThread().interrupt();
         }
     }
+
 }

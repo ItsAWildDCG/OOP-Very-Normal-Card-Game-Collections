@@ -1,11 +1,23 @@
 package PokerHands;
 
 import Cards.Card;
+import Person.Person;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Calculator {
+
+    public static HandValue calculatePlayer(Person a, Person community){
+        System.out.printf("%s's hand: %s%n", a.getName() , a.getHand());
+        List<Card> temp = new ArrayList<>();
+        temp.addAll(a.getHand());
+        temp.addAll(community.getHand());
+        HandValue hv = Calculator.evaluateAuto(temp);
+        System.out.println(a.getName() +  "'s hand evaluated as: " + hv);
+        System.out.println();
+        return hv;
+    }
 
     public static HandValue evaluateAuto(List<Card> cards) {
         if (cards.size() <= 5)
