@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Card {
     private String name, suit;
-    private boolean faceUp = true, wild;
+    private boolean faceUp = true, wild, selected = false;
     private int rank;
     public static final int[] Ranks = {
             0, 1 , 2, 3, 4, 5, 6, 7, 8, 9 , 10 , 11, 12 , 13 , 14
@@ -72,6 +72,14 @@ public class Card {
     public void setSuit(String newSuit){
         this.suit = newSuit;
         updateName();
+    }
+
+    public void selectCard(){
+        selected = !selected;
+    }
+
+    public boolean isSelected(){
+        return selected;
     }
 
     public boolean getFaceUp() {

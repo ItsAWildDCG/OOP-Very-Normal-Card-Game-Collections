@@ -4,10 +4,10 @@ import Person.*;
 import PokerHands.*;
 
 public class Combat {
-    public static void resolveRound(Person player, HandValue h1, Person enemy, HandValue h2){
+    public static void resolveRound(Player player, HandValue h1, Person enemy, HandValue h2, String state){
         Person attacker, defender;
         HandValue atkHand, defHand;
-        if (player.getState().equals("Fold")){
+        if (state.equals("Fold")){
             attacker = enemy; defender = player;
             atkHand = h2; defHand = h1;
         }
@@ -31,20 +31,25 @@ public class Combat {
         int defValue = (int)(defender.getTable().getTypeDef(defHand.gethandType()) * defender.getDefMult());
 
         if (attacker.isPlayer()){
-            if (attacker.getState().equals("Raise")){
+            if (state.equals("Raise")){
                 atkValue = (int)(atkValue*1.5);
                 System.out.println("Raise successful! Damage dealt boosted.");
             }
+            if (player.getVampbuff()>0){
+                player.changeChips(atkValue);
+                System.out.printf("Lifesteal activated! Regained %d chips\n", atkValue);
+                player.changeVampbuff(-1);
+            }
         }
         else{
-            if (defender.getState().equals("Fold")){
+            if (state.equals("Fold")){
                 defValue = defValue*3;
                 System.out.print("Folded. Spent 5 chips to reduce damage this turn. ");
                 defender.changeChips(-5);
                 System.out.printf("(Remaining: %d/%d)\n", defender.getCurrentChips(), defender.getBaseChips());
 
             }
-            else if (defender.getState().equals("Raise")){
+            else if (state.equals("Raise")){
                 System.out.print("Raise failed... Lost 20 to the wager. ");
                 defender.changeChips(-20);
                 System.out.printf("(Remaining: %d/%d)\n", defender.getCurrentChips(), defender.getBaseChips());

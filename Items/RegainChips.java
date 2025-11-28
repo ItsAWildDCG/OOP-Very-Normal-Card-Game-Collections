@@ -1,20 +1,10 @@
 package Items;
-import java.util.*;
-import java.math.*;
-import Person.Person;
+
 public class RegainChips extends Item {
-    public RegainChips(String item_name){
-        super(item_name);
-        this.ID = 109;
-        this.howToUse = "Regain 20% of your starting chips";
-        this.description = "A blessing from the Lord";
+    public RegainChips(){
+        super("Pile of cash",
+                "Take my money b*tch",
+                "Regain 20% of your starting chips",
+                "sth sth path");
     }
-
-    @Override
-    public void use(Person self){
-        self.healed(Math.round(self.getBaseChips() / 5));
-    }
-}   
-
-
-
+}

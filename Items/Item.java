@@ -2,7 +2,11 @@ package Items;
 
 import javax.swing.ImageIcon;
 
-public  class Item {
+public class Item {
+    public static String[] Item_Names = {
+            "Broken Magnifier","+1 Uno Card","One For @Everyone","No more middle","Adoption Paper","Cursed Scroll","Mr Krabz's Greed","Doppleganger","Kings of King",
+            "Alu-card's Battlepass","I lose this, you lose that","CSync","Demotion","Strength","Pile of cash","Madness Potion","Slate of *null*","Fairy's tooth","Rainbow"
+    };
     private String item_name, description, howToUse;
     private ImageIcon icon;
 
@@ -21,6 +25,10 @@ public  class Item {
         return description;
     }
 
+    public String getHowToUse() {
+        return howToUse;
+    }
+
     public ImageIcon getIcon() {
         return icon;
     }
@@ -28,15 +36,9 @@ public  class Item {
     public void setIcon(String iconPath) {
         this.icon = new ImageIcon(iconPath);
     }
-}
 
-
-
-class RegainChips extends Item {
-    public RegainChips(){
-        super("Pile of cash",
-                "Take my money b*tch",
-                "Regain 20% of your starting chips",
-                "sth sth path");
+    public String toString(){
+        return String.format("%s: %s", item_name, howToUse);
     }
 }
+

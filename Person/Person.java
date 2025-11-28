@@ -59,6 +59,10 @@ public class Person {
         return hand;
     }
 
+    public int size(){
+        return hand.size();
+    }
+
     public int getInit_card_draw() {
         return init_card_draw;
     }
@@ -79,27 +83,41 @@ public class Person {
         return table;
     }
 
-    public void drawFrom(Deck i) {
+    public boolean drawFrom(Deck i) {
         if (i.isEmpty()) {
             System.out.println("Uh uh uh, ya can't draw from an empty deck ya know");
+            return false;
         } else {
             this.hand.add(i.peek());
             i.removeCard(i.peek());
+            return true;
         }
     }
 
     public void drawXFrom(Deck i, int X) {
         for (int n = 0; n < X; n++) {
-            drawFrom(i);
+            if (!drawFrom(i)) break;
         }
+    }
+
+    public void changeAtk(double i){
+        atkMult = Math.max(atkMult+i, 0);
+    }
+
+    public void changeDef(double i){
+        defMult = Math.max(defMult+i, 0);
     }
 
     public Card discardTop() {
         return hand.removeLast();
     }
 
-    public void discard(Card c) {
-        hand.remove(c);
+    public Card discard(Card c) {
+        if (hand.contains(c)) {
+            hand.remove(c);
+            return c;
+        }
+        return null;
     }
 
     public void changeCardDraw(int a) {
