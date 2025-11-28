@@ -242,8 +242,7 @@ public class ActionManager {
                     System.out.println("Select the position of the card you wish to lower rank (you have " + data.you.size() + " cards in hand):");
                     try{
                         int view = inp.nextInt();
-                        if (selectCard(data.you, view).getRank() == 2) selectCard(data.you, view).changeRank(12);
-                        else selectCard(data.you, view).changeRank(-1);
+                        selectCard(data.you, view).changeRank(-1);
                         System.out.println("Rank of card lowered.");
                         break;
                     } catch (Exception e) {
@@ -253,8 +252,7 @@ public class ActionManager {
                     System.out.println("Select the position of the card you wish to raise rank (you have " + data.you.size() + " cards in hand):");
                     try{
                         int view = inp.nextInt();
-                        if (selectCard(data.you, view).getRank() == 14) selectCard(data.you, view).changeRank(-12);
-                        else selectCard(data.you, view).changeRank(1);
+                        selectCard(data.you, view).changeRank(1);
                         System.out.println("Rank of card raised.");
                         break;
                     } catch (Exception e) {
