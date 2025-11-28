@@ -95,7 +95,7 @@ public class Card {
     }
 
     public void changeRank(int r){
-        this.rank += r;
+        rank = (rank+r-2)%13+2;
     }
 
     public void updateName(){
