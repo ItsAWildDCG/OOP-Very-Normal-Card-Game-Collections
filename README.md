@@ -12,7 +12,7 @@ Mục tiêu chính của ứng dụng:
 - Một game có giao diện hoàn chỉnh về tính năng và hình ảnh.
 - Một bài thực hành hoàn chỉnh về OOP và thiết kế lớp, phù hợp với yêu cầu của môn Lập trình hướng đối tượng.
 
-Hướng dẫn chạy ứng dụng: chạy file OutofPoker.java
+Hướng dẫn chạy ứng dụng: tải OOP-Out-of-Poker-FinalDemo và chạy file OutofPoker.java
 
 Link báo cáo: https://docs.google.com/document/d/1kWQjUuYiWqXNlZDM1pVYob9DvL0vqccLisuike47I_s/edit?usp=sharing
 
