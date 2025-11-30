@@ -1,22 +1,40 @@
 package Items;
 
-import javax.swing.ImageIcon;
+import Game.*;
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Random;
+import javax.swing.ImageIcon;
 
 public class Item {
     public static String[] Item_Names = {
-            "Broken Magnifier","+1 Uno Card","One For @Everyone","No more middle","Adoption Paper","Cursed Scroll","Mr Krabz's Greed","Doppleganger","Kings of King",
-            "Alu-card's Battlepass","I lose this, you lose that","CSync","Demotion","Strength","Pile of cash","Madness Potion","Slate of *null*","Fairy's tooth","Rainbow"
+            "+1 Uno Card","Demotion","Strength","Pile of cash"
     };
     private String item_name, description, howToUse;
+    private int baseChipCost;
     private ImageIcon icon;
+    private static final int DEFAULT_ICON_SIZE = 50;
 
-    public Item(String item_name, String description, String howToUse, String iconPath){
+    public Item(String item_name, String description, String howToUse, String iconPath, int baseChipCost){
         this.item_name = item_name;
         this.howToUse = howToUse;
         this.description = description;
-        this.icon = new ImageIcon(iconPath);
+        this.baseChipCost = baseChipCost;
+        try {
+            java.net.URL url = getClass().getResource(iconPath);
+            if (url != null) {
+                ImageIcon originalIcon = new ImageIcon(url);
+                // Resize ảnh
+                Image scaledImage = originalIcon.getImage().getScaledInstance(DEFAULT_ICON_SIZE, DEFAULT_ICON_SIZE, Image.SCALE_SMOOTH);
+                this.icon = new ImageIcon(scaledImage);
+            } else {
+                System.err.println("Icon not found for: " + iconPath);
+                this.icon = null; // Gán null nếu không tìm thấy
+            }
+        } catch (Exception e) {
+            System.err.println("Error loading icon: " + iconPath + " - " + e.getMessage());
+            this.icon = null;
+        }
     }
 
     public String getName() {
@@ -35,6 +53,10 @@ public class Item {
         return icon;
     }
 
+    public int getBaseChipCost(){
+        return baseChipCost;
+    }
+
     public void setIcon(String iconPath) {
         this.icon = new ImageIcon(iconPath);
     }
@@ -43,70 +65,27 @@ public class Item {
         return String.format("%s: %s", item_name, howToUse);
     }
 
-    public static void itemGen(ArrayList<Item> items, String i){
-        String nextItem;
-        Random rdm = new Random();
-        if (i.equals("Random"))  nextItem = Item.Item_Names[rdm.nextInt(19)];
-        else nextItem = i;
-        switch(nextItem){
-            case "Broken Magnifier":
-                items.add(new BrokenMag());
-                break;
+    public static Item itemGen(String i){
+        switch(i){
             case "+1 Uno Card":
-                items.add(new CardDraw());
-                break;
-            case "One For @Everyone":
-                items.add(new Charity());
-                break;
-            case "No more middle":
-                items.add(new CommunityCardDeduct());
-                break;
-            case "Adoption Paper":
-                items.add(new CommunityCardDraw());
-                break;
-            case "Cursed Scroll":
-                items.add(new CursedScroll());
-                break;
-            case "Mr Krabz's Greed":
-                items.add(new Dia2());
-                break;
-            case "Doppleganger":
-                items.add(new Duplic());
-                break;
-            case "Kings of King":
-                items.add(new Kinged());
-                break;
-            case "Alu-card's Battlepass":
-                items.add(new Lifesteal());
-                break;
-            case "I lose this, you lose that":
-                items.add(new Loss());
-                break;
-            case "CSync":
-                items.add(new Melatonin());
-                break;
+                return (new CardDraw());
+
             case "Demotion":
-                items.add(new RankDec());
-                break;
+                return (new RankDec());
+
             case "Strength":
-                items.add(new RankInc());
-                break;
+                return (new RankInc());
+
             case "Pile of cash":
-                items.add(new RegainChips());
-                break;
-            case "Madness Potion":
-                items.add(new Singed());
-                break;
-            case "Slate of *null*":
-                items.add(new Slate());
-                break;
-            case "Fairy's tooth":
-                items.add(new Toothfairy());
-                break;
-            case "Rainbow":
-                items.add(new UnoPickMoreCards());
-                break;
+                return (new RegainChips());
+
         }
+        return null;
+    }
+
+    public void use(GameController controller){
+        System.out.println("Items?");
+        // dành cho các items con 
     }
 }
 

@@ -1,27 +1,20 @@
 package Saves;
 
-import Cards.Card;
-import Decks.Deck;
+import Cards.*;
 import Items.Item;
 import Person.*;
 
 import java.io.File;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 import static Items.Item.itemGen;
 
 public class Loader {
-    public static SaveData load(Scanner inp){
+    public static SaveData load(){
         try (Scanner savefile = new Scanner (new File("Saves/game.sav"))){
             SaveData data = new SaveData();
             if (!savefile.hasNextInt()) throw new Exception();
-            System.out.println("A saved game has been found. Would you like to continue? (y/n)");
-            while(true){
-                String play = inp.nextLine();
-                if(play.equals("n")) return null;
-                if(play.equals("y")) break;
-            }
             data.discards = savefile.nextInt();
             data.round = savefile.nextInt();
             data.turn = savefile.nextInt();
@@ -54,9 +47,10 @@ public class Loader {
             data.you.changeVampbuff(savefile.nextInt());
             data.you.changeBlindbuff(savefile.nextInt());
             savefile.nextLine();
-            int itemsize = savefile.nextInt();
-            savefile.nextLine();
-            while(itemsize-->0) itemGen(data.items, savefile.nextLine());
+            for (int i = 0; i<6; i++){
+                String nextitem = savefile.nextLine();
+                if (!nextitem.equals("null")) data.items[i] = itemGen(nextitem);
+            }
             int playersize = savefile.nextInt();
             savefile.nextLine();
             while(playersize-->0) data.you.getHand().add(new Card(savefile.nextLine()));

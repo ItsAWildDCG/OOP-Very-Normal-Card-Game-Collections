@@ -1,10 +1,63 @@
 package Items;
 
+import Cards.*;
+import Game.CardUI;
+import Game.GameController;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 public class RankDec extends Item{
     public RankDec(){
         super("Demotion",
                 "Demoted for no reason lol",
                 "Decrease rank of 1 card in your hand by 1",
-                "s");
+                "/res/image/RankDec.png",
+                3);
+    }
+
+    @Override
+    public void use(GameController controller) {
+
+        List<CardUI> selectedCards = new ArrayList<>(controller.getUI().selectedCards);
+
+        if (selectedCards.isEmpty() || selectedCards.size() > 1) {
+            JOptionPane.showMessageDialog(controller.getUI(), "Vui lòng chọn 1 lá bài để thay đổi");
+            return;
+        }
+
+        // Tìm vị trí lá bài (1-indexed)
+        List<Integer> positions = new ArrayList<>();
+        List<Card> playerCards = controller.getPlayerCards();
+
+        Card oldCard = null;
+
+        for (CardUI cUI : selectedCards) {
+            int index = playerCards.indexOf(cUI.getCard());
+            if (index != -1) {
+                positions.add(index - 1);
+                oldCard = playerCards.get(index);   // LẤY LÁ BÀI CŨ
+            }
+        }
+
+        if (oldCard == null) {
+            JOptionPane.showMessageDialog(controller.getUI(), "Không tìm thấy lá bài.");
+            return;
+        }
+
+        Card newCard = new Card(
+            oldCard.getRank() + 1,   
+            oldCard.getSuit()        
+        );
+
+
+        if (controller.replacePlayerCard(positions, newCard)) {
+            controller.getUI().updateCardRows();
+            controller.getUI().updateInfoLabel();
+            controller.getUI().updateUI();
+        } else {
+            JOptionPane.showMessageDialog(controller.getUI(), 
+                "Không thể thay đổi lá bài.");
+        }
     }
 }

@@ -4,10 +4,11 @@ import Person.*;
 import PokerHands.*;
 
 public class Combat {
-    public static void resolveRound(Player player, HandValue h1, Person enemy, HandValue h2, String state){
+    public static void resolveRound(Player player, HandValue h1, Person enemy, HandValue h2, String playerAction, int wager){
         Person attacker, defender;
         HandValue atkHand, defHand;
-        if (state.equals("Fold")){
+
+        if (playerAction.equals("Fold")){
             attacker = enemy; defender = player;
             atkHand = h2; defHand = h1;
         }
@@ -18,12 +19,11 @@ public class Combat {
             attacker = enemy; defender = player;
             atkHand = h2; defHand = h1;
         } else {
-            System.out.println("It's a draw! No damage dealt.\n-----------------------------------------------------------------------------------------------------");
-            try {
-                Thread.sleep(1000);  // 1.5 seconds
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
+            if (wager > 0) {
+                player.changeChips(wager);
+                System.out.printf("Draw! Wager of %d chips returned.\n", wager);
             }
+            System.out.println("It's a draw! No damage dealt.\n-----------------------------------------------------------------------------------------------------");
             return;
         }
 
@@ -31,8 +31,9 @@ public class Combat {
         int defValue = (int)(defender.getTable().getTypeDef(defHand.gethandType()) * defender.getDefMult());
 
         if (attacker.isPlayer()){
-            if (state.equals("Raise")){
+            if (playerAction.equals("Raise")){
                 atkValue = (int)(atkValue*1.5);
+                player.changeChips(wager);
                 System.out.println("Raise successful! Damage dealt boosted.");
             }
             if (player.getVampbuff()>0){
@@ -42,23 +43,15 @@ public class Combat {
             }
         }
         else{
-            if (state.equals("Fold")){
+            if (playerAction.equals("Fold")){
                 defValue = defValue*3;
                 System.out.print("Folded. Spent 5 chips to reduce damage this turn. ");
-                defender.changeChips(-5);
-                System.out.printf("(Remaining: %d/%d)\n", defender.getCurrentChips(), defender.getBaseChips());
 
             }
-            else if (state.equals("Raise")){
+            else if (playerAction.equals("Raise")){
                 System.out.print("Raise failed... Lost 20 to the wager. ");
-                defender.changeChips(-20);
-                System.out.printf("(Remaining: %d/%d)\n", defender.getCurrentChips(), defender.getBaseChips());
             }
-        }
-        try {
-            Thread.sleep(1000);  // 1.5 seconds
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
+                        
         }
         int damage = Math.max(0, atkValue - defValue);
 
@@ -73,11 +66,5 @@ public class Combat {
         System.out.printf("→ Damage dealt: %d%n", damage);
         System.out.printf("%s's remaining chips: %d/%d\n-----------------------------------------------------------------------------------------------------\n",
                 defender.getName(), defender.getCurrentChips(), defender.getBaseChips());
-        try {
-            Thread.sleep(1000);  // 1.5 seconds
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
     }
-
 }

@@ -41,6 +41,14 @@ public class Card {
         updateName();
     }
 
+    public Card(Card card){
+        setRank(card.getRank());
+        setSuit(card.getSuit());
+        setWild(card.isWild());
+        setFaceUp(card.getFaceUp());
+        updateName();
+    }
+    
     public Card(String s){
         String[] newcard = s.split("\\s+");
         if (newcard[0].equals("Wild")){
@@ -65,6 +73,7 @@ public class Card {
 
     public void setWild(boolean wild) {
         this.wild = wild;
+        updateName();
     }
 
     public String getSuit(){return suit;}
@@ -95,7 +104,8 @@ public class Card {
     }
 
     public void changeRank(int r){
-        rank = (rank+r-2)%13+2;
+        this.rank += r;
+        updateName();
     }
 
     public void updateName(){

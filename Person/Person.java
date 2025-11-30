@@ -1,12 +1,9 @@
 package Person;
 
-import java.util.*;
-import java.math.*;
-
 import Battle.TypeTable;
 import Cards.Card;
-import Decks.Deck;
-import Items.*;
+import Cards.Deck;
+import java.util.*;
 
 public class Person {
     private String CharName, state;
@@ -43,6 +40,10 @@ public class Person {
         state = "";
     }
 
+    public void setBaseChips(int baseChips){
+        this.baseChips = baseChips;
+    }
+    
     public double getAtkMult() {
         return atkMult;
     }
@@ -152,8 +153,6 @@ public class Person {
     }
 
     public void uniqueAction(){
-        return;
     }
-
 }
 

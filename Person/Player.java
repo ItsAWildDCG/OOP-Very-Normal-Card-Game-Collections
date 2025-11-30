@@ -1,7 +1,5 @@
 package Person;
 
-import java.util.ArrayList;
-
 public class Player extends Person{
     private int vampbuff = 0;
     private int blindbuff = 0;
