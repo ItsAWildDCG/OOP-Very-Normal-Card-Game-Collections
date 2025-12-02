@@ -252,7 +252,7 @@ public class GameController {
 
         // Xử lý chuyển lượt/chuyển kẻ thù (Logic đã sửa)
         if (currentEnemy.getCurrentChips() <= 0) {
-            if (round + 1 < gauntlet.length){
+            if (round < gauntlet.length){
                 you.setBaseChips(getYou().getBaseChips() + 20);
                 state = "Shop";
                 if (ui != null) {

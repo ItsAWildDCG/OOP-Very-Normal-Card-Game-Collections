@@ -106,6 +106,7 @@ public class GameUI extends JFrame {
         JButton startGame = createButton("START NEW GAME", e -> {
             Saves.Saver.deleteSave();
             controller.startNewGame("Player");
+            addItemToSlot(new RegainChips());
             updateUI();
             showScreen("game");
         });
@@ -313,9 +314,6 @@ public class GameUI extends JFrame {
         nextTurnBtn.setEnabled(false);
 
         JPanel itemPanel = createItemPanel();
-
-        Item test = new RegainChips();
-        addItemToSlot(test);
 
         int itemPanelX = 840;
         int itemPanelY = 350;
@@ -812,8 +810,10 @@ public class GameUI extends JFrame {
             Saves.Saver.deleteSave();
             controller.setState("");
             showScreen("menu");
-        } else if (controller.getRound() > controller.getGauntletLength()) {
+        } else if (controller.getEnemyHP() <= 0 && controller.getRound() == controller.getGauntletLength()) {
             JOptionPane.showMessageDialog(this, "Chúc mừng! Bạn đã chiến thắng tất cả kẻ thù.");
+            Saves.Saver.deleteSave();
+            controller.setState("");
             showScreen("menu");
         }
     }
