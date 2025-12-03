@@ -194,7 +194,7 @@ public class GameController {
             return false;
         }
 
-        int index = positions.get(0) - 1;
+        int index = positions.get(0);
 
         List<Card> hand = you.getHand();
         if (index < 0 || index >= hand.size()) {
@@ -252,7 +252,7 @@ public class GameController {
 
         // Xử lý chuyển lượt/chuyển kẻ thù (Logic đã sửa)
         if (currentEnemy.getCurrentChips() <= 0) {
-            if (round < gauntlet.length){
+            if (round  < gauntlet.length){
                 you.setBaseChips(getYou().getBaseChips() + 20);
                 state = "Shop";
                 if (ui != null) {

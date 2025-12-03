@@ -11,8 +11,9 @@ public class RegainChips extends Item {
                 5);
     }
     @Override
-    public void use(GameController controller) {
+    public boolean use(GameController controller) {
         controller.getYou().changeChips((int)(controller.getYou().getBaseChips() * 20 / 100)); 
         if (controller.getUI() != null) controller.getUI().updateUI(); // Cập nhật thanh máu
+        return true;
     }
 }

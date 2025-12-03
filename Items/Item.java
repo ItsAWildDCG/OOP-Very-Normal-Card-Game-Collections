@@ -83,9 +83,10 @@ public class Item {
         return null;
     }
 
-    public void use(GameController controller){
+    public boolean use(GameController controller){
         System.out.println("Items?");
-        // dành cho các items con 
+        // dành cho các items con
+        return true;
     }
 }
 

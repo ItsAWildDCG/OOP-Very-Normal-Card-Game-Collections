@@ -17,13 +17,13 @@ public class RankDec extends Item{
     }
 
     @Override
-    public void use(GameController controller) {
+    public boolean use(GameController controller) {
 
         List<CardUI> selectedCards = new ArrayList<>(controller.getUI().selectedCards);
 
         if (selectedCards.isEmpty() || selectedCards.size() > 1) {
             JOptionPane.showMessageDialog(controller.getUI(), "Vui lòng chọn 1 lá bài để thay đổi");
-            return;
+            return false;
         }
 
         // Tìm vị trí lá bài (1-indexed)
@@ -35,18 +35,18 @@ public class RankDec extends Item{
         for (CardUI cUI : selectedCards) {
             int index = playerCards.indexOf(cUI.getCard());
             if (index != -1) {
-                positions.add(index - 1);
+                positions.add(index);
                 oldCard = playerCards.get(index);   // LẤY LÁ BÀI CŨ
             }
         }
 
         if (oldCard == null) {
-            JOptionPane.showMessageDialog(controller.getUI(), "Không tìm thấy lá bài.");
-            return;
+            JOptionPane.showMessageDialog(controller.getUI(), "Không tìm thấy lá bài trong tay.");
+            return false;
         }
 
         Card newCard = new Card(
-            oldCard.getRank() + 1,   
+            oldCard.getRank() + -1,
             oldCard.getSuit()        
         );
 
@@ -58,6 +58,8 @@ public class RankDec extends Item{
         } else {
             JOptionPane.showMessageDialog(controller.getUI(), 
                 "Không thể thay đổi lá bài.");
+            return false;
         }
+        return true;
     }
 }

@@ -286,9 +286,9 @@ public class GameUI extends JFrame {
             updateStatLabels();
         });
 
-        saveBtn = createActionButton("Save", e ->{
+        saveBtn = createActionButton("Save & Quit", e ->{
             controller.saveGame();
-            showScreen("menu");
+            System.exit(0);
         });
         
         // THÊM NÚT DISCARD
@@ -298,7 +298,7 @@ public class GameUI extends JFrame {
         raiseBtn.setBounds(0, 50, 120, 40);
         foldBtn.setBounds(0, 100, 120, 40);
         discardBtn.setBounds(0, 150, 120, 40); // Nút Discard
-        saveBtn.setBounds(840, 10, 120, 40);
+        saveBtn.setBounds(780, 10, 180, 40);
 
         panel.add(saveBtn);
         actionPanel.add(callBtn);
@@ -418,11 +418,12 @@ public class GameUI extends JFrame {
                 
                 if (currentItem != null) {
                     // Kích hoạt phương thức use() riêng của item con
-                    currentItem.use(controller); 
-                    
-                    // Sau khi dùng, xóa item khỏi slot
-                    controller.getItemSlots()[slotIndex] = null;
-                    updateItemPanel();
+                    if (currentItem.use(controller)){
+                        // Sau khi dùng, xóa item khỏi slot
+                        controller.getItemSlots()[slotIndex] = null;
+                        updateItemPanel();
+                    }
+
                 } 
             }
 

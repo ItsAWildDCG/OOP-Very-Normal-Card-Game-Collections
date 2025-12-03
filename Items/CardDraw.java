@@ -12,8 +12,9 @@ public class CardDraw extends Item {
     }
 
     @Override
-    public void use(GameController controller) {
+    public boolean use(GameController controller) {
         controller.getYou().drawXFrom(controller.getDeck(), 1); 
         if (controller.getUI() != null) controller.getUI().updateUI();
+        return true;
     }
 }
