@@ -19,8 +19,13 @@ Link báo cáo: https://docs.google.com/document/d/1kWQjUuYiWqXNlZDM1pVYob9DvL0v
 Link biểu đồ UML: https://drive.google.com/file/d/1jm8NzW4rucLZkQkjNhNJGbMBy26Ow0zj/view?usp=sharing
 
 Danh sách thành viên nhóm:
+
 Nguyễn Mạnh Đức - B23DCKH028: Thiết kế chính về các lớp logic
+
 Nguyễn An Huy - B23DCCN392: Thiết kế chính về các lớp giao diện GUI
+
 Nguyễn Tuấn Kiệt - B23DCCN472: Hỗ trợ thiết kế các lớp vật phẩm
+
 Dương Gia Nguyên - B23DCDT179: Hỗ trợ thiết kế lớp tính giá trị tay bài
+
 Lê Anh Đức - B23DCVT094: Hỗ trợ thiết kế lớp đồ họa thẻ
